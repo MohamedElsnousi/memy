@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#142E38">
+<title>حجز تذاكر | ميمي أم روتانا</title>
+<meta name="description" content="حجز تذاكر الطيران عبر ميمي أم روتانا: رحلات السفر والعمرة والزيارة العائلية بإصدار فوري ومتابعة كاملة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Almarai:wght@300;400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .sec-divider{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+  .sec-divider::before{
+    content:"";
+    display:block;
+    height:1px;
+    background:rgba(24,40,48,.14);
+  }
+
+  .hero .dots{
+    bottom:calc(104px + env(safe-area-inset-bottom,0px));
+  }
+
+  .hero-stats-float{
+    position:absolute;
+    z-index:5;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:min(1140px, calc(100% - 32px));
+    background:#ffffff;
+    color:#182830;
+    box-shadow:0 -8px 22px rgba(20, 46, 56, .12);
+    padding:14px 22px calc(14px + env(safe-area-inset-bottom,0px));
+  }
+  .hero-stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4, minmax(120px, 1fr));
+    gap:16px;
+    text-align:center;
+    align-items:center;
+  }
+  .hero-stats-grid .stat b{
+    font-size:28px;
+    color:#2B5B6C;
+  }
+  .hero-stats-grid .stat span{
+    font-size:14px;
+    color:#5B6D75;
+  }
+
+  .flight-route{
+    display:inline-block;
+    font-size:13px;
+    font-weight:700;
+    color:#2B5B6C;
+    background:rgba(43,91,108,.10);
+    padding:4px 10px;
+    margin-bottom:10px;
+  }
+  .flight-meta{
+    font-size:13.5px;
+    color:#5B6D75;
+    margin-bottom:10px;
+  }
+
+  section#contact.sec{padding-bottom:0}
+
+  .contact-single-box{
+    position:relative;
+    z-index:3;
+    background:#ffffff;
+    color:#182830;
+    border:0;
+    border-radius:0;
+    margin-top:-18px;
+    margin-bottom:0;
+    box-shadow:0 -10px 28px rgba(20,46,56,.09);
+    max-width:740px;
+    margin-inline:auto;
+  }
+  .contact-pane{
+    padding:34px 36px 44px;
+    background:#ffffff;
+    display:flex;
+    flex-direction:column;
+  }
+  .contact-pane--inquiry{
+    --pane-accent:#2B5B6C;
+    --pane-accent-soft:rgba(43,91,108,.12);
+    --pane-btn-ink:#ffffff;
+  }
+
+  .pane-head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .pane-head .p-ic{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:var(--pane-accent-soft);
+    color:var(--pane-accent);
+    display:grid;
+    place-items:center;
+    flex:none;
+  }
+  .pane-head h3{
+    margin:0;
+    font-size:21px;
+    color:var(--pane-accent);
+  }
+
+  .line-field{
+    display:block;
+    margin-bottom:20px;
+  }
+  .line-field input,
+  .line-field select,
+  .line-field textarea{
+    width:100%;
+    padding:10px 2px;
+    background:transparent;
+    color:#182830;
+    border:0;
+    border-bottom:1.5px solid rgba(24,40,48,.24);
+    border-radius:0;
+    font:400 16px Almarai,sans-serif;
+    transition:border-color .2s ease;
+  }
+  .line-field textarea{
+    min-height:84px;
+    resize:vertical;
+  }
+  .line-field input::placeholder,
+  .line-field textarea::placeholder{
+    color:#73848C;
+  }
+  .line-field input:focus,
+  .line-field select:focus,
+  .line-field textarea:focus{
+    outline:none;
+    border-bottom-color:var(--pane-accent);
+  }
+
+  .contact-pane .btn{
+    background:transparent;
+    color:var(--pane-accent);
+    border:1.5px solid var(--pane-accent);
+    border-radius:0;
+    transition:background-color .25s ease, color .25s ease, transform .2s ease;
+  }
+  .contact-pane .btn:hover{
+    background:var(--pane-accent);
+    color:var(--pane-btn-ink);
+    transform:translateY(-1px);
+  }
+  .contact-pane .hint{color:#5B6D75}
+
+  .crisco-credit-below{
+    margin-top:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    direction:ltr;
+    font-family:'Space Grotesk', system-ui, -apple-system, sans-serif;
+    font-size:0.82rem;
+    color:rgba(255,255,255,.72);
+  }
+  .crisco-credit-below .logo{
+    font-family:'Space Grotesk', system-ui, -apple-system, sans-serif;
+    font-size:0.95rem;
+    font-weight:700;
+    letter-spacing:0.6px;
+    text-transform:uppercase;
+    display:inline-block;
+    text-decoration:none;
+  }
+  .crisco-credit-below .logo-a{
+    color:#06B6D4;
+  }
+  .crisco-credit-below .logo-b{
+    color:#8B5CF6;
+    font-weight:500;
+  }
+
+  @media (max-width:900px){
+    .contact-pane{padding:26px 20px 34px}
+  }
+
+  @media (max-width:860px){
+    .hero{min-height:760px}
+    .hero .txt{padding-bottom:175px}
+    .hero .dots{bottom:calc(154px + env(safe-area-inset-bottom,0px))}
+    .hero-stats-float{padding:12px 14px calc(12px + env(safe-area-inset-bottom,0px))}
+    .hero-stats-grid{grid-template-columns:repeat(2, 1fr);gap:10px 14px}
+    .hero-stats-grid .stat b{font-size:22px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== الشريط العلوي الموحد ===== -->
+<header class="top" id="top">
+  <!-- أعلى الشريط في المنتصف: واتساب وفيسبوك على اليمين، والهاتف والبريد والعنوان على اليسار -->
+  <div class="top-bar">
+    <div class="bar-in">
+      <div class="top-socials" aria-label="واتساب وفيسبوك">
+        <!-- واتساب -->
+        <a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="واتساب" title="واتساب">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5 0a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.5a1.6 1.6 0 0 0 .3-.4.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4 5.2 5.2 0 0 0 3.2.6 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3Z"/></svg>
+        </a>
+
+        <!-- فيسبوك -->
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="فيسبوك" title="فيسبوك">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5Z"/></svg>
+        </a>
+      </div>
+
+      <div class="top-contact-info">
+        <a class="info-item" href="tel:+201000000000" dir="ltr">
+          <span>+20 100 000 0000</span>
+        </a>
+
+        <a class="info-item" href="mailto:info@alofoq-recruitment.com">
+          <span>info@alofoq-recruitment.com</span>
+        </a>
+
+        <span class="info-item">
+          <span>العنوان: الرياض — حي العليا</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- أسفل الشريط العلوي: الشعار + الروابط + الأزرار -->
+  <div class="in">
+    <a class="logo" href="index.html">ميمي أم روتانا</a>
+
+    <nav id="nav">
+      <a href="index.html">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/></svg>
+        <span>الرئيسية</span>
+      </a>
+      <a href="index.html#services">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>خدماتنا</span>
+      </a>
+      <a href="index.html#visit">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="17" cy="9" r="2"/><path d="M17 14a3 3 0 0 1 3 3v3"/></svg>
+        <span>زيارة عائلية</span>
+      </a>
+      <a href="index.html#umrah">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M10 21v-5h4v5"/></svg>
+        <span>عمرة</span>
+      </a>
+      <a href="tickets.html" class="is-current" aria-current="page">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5a2.1 2.1 0 0 0-3-3L13 8 4.8 6.2a.5.5 0 0 0-.5.8L8 12l-2 2-2-.5-.6.6 2.6 2.6 2.6 2.6.6-.6-.5-2 2-2 4.5 3.7a.5.5 0 0 0 .8-.5Z"/></svg>
+        <span>حجز تذاكر</span>
+      </a>
+    </nav>
+
+    <div class="top-actions">
+      <a class="btn top-ghost-btn" href="index.html#contact">اطلب استقداماً</a>
+      <a class="btn top-white-btn" href="#contact">تواصل معنا</a>
+    </div>
+
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" aria-label="فتح القائمة">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== الهيرو ===== -->
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="حجز تذاكر مع ميمي أم روتانا">
+
+  <div class="slide on" role="group" aria-label="1 من 3">
+    <div class="bg"
+         style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80')"
+         role="img" aria-label="طائرة تحلق فوق السحاب"></div>
+    <div class="shade"></div>
+    <div class="txt">
+      <nav class="hero-crumb" aria-label="مسار الصفحة">
+        <a href="index.html">الرئيسية</a>
+        <span aria-hidden="true">/</span>
+        <span class="crumb-current">حجز تذاكر</span>
+      </nav>
+      <h1>تذاكر سفر منسقة ومضمونة</h1>
+      <p>نرتب رحلات المسافرين والمعتمرين بأفضل الخيارات والأسعار وإصدار فوري.</p>
+      <a class="btn" href="#offers">استعرض مسارات الطيران</a>
+    </div>
+  </div>
+
+  <div class="slide" role="group" aria-label="2 من 3">
+    <div class="bg"
+         style="background-image:url('https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1920&q=80')"
+         role="img" aria-label="مقاعد داخل الطائرة"></div>
+    <div class="shade"></div>
+    <div class="txt">
+      <nav class="hero-crumb" aria-label="مسار الصفحة">
+        <a href="index.html">الرئيسية</a>
+        <span aria-hidden="true">/</span>
+        <span class="crumb-current">حجز تذاكر</span>
+      </nav>
+      <h2>رحلات دولية وإقليمية بمرونة</h2>
+      <p>خيارات ذهاب وعودة أو اتجاه واحد مع توضيح كامل لبدلات الأمتعة وشروط التغيير.</p>
+      <a class="btn" href="#ticket-types">تعرّف على أنواع الحجز</a>
+    </div>
+  </div>
+
+  <div class="slide" role="group" aria-label="3 من 3">
+    <div class="bg"
+         style="background-image:url('https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=1920&q=80')"
+         role="img" aria-label="إجراءات السفر في المطار"></div>
+    <div class="shade"></div>
+    <div class="txt">
+      <nav class="hero-crumb" aria-label="مسار الصفحة">
+        <a href="index.html">الرئيسية</a>
+        <span aria-hidden="true">/</span>
+        <span class="crumb-current">حجز تذاكر</span>
+      </nav>
+      <h2>متابعة حتى لحظة الوصول</h2>
+      <p>نوافيك بتفاصيل الرحلة ومواعيدها ونساعدك عند الحاجة لإعادة الجدولة.</p>
+      <a class="btn" href="#contact">اطلب تذكرتك الآن</a>
+    </div>
+  </div>
+
+  <div class="dots" id="dots"></div>
+
+  <div class="hero-stats-float" aria-label="إحصائيات رحلات وتذاكر الطيران">
+    <div class="hero-stats-grid">
+      <div class="stat"><b>+85</b><span>وجهة دولية</span></div>
+      <div class="stat"><b>+120</b><span>شركة طيران</span></div>
+      <div class="stat"><b>+18,000</b><span>تذكرة مصدرة</span></div>
+      <div class="stat"><b>24/7</b><span>متابعة ودعم رحلات</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== عروض الطيران ===== -->
+<section class="sec" id="offers">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">مسارات الطيران</span>
+      <h2>خيارات رحلات مختارة بأسعار تنافسية</h2>
+      <p>الأسعار تقديرية وتختلف حسب التواريخ والتوافر وشركة الطيران؛ نؤكد لك السعر النهائي قبل الإصدار.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card plan reveal">
+        <span class="flight-route">رحلات إقليمية · سفر وعمل</span>
+        <h3>الخليج والشرق الأوسط</h3>
+        <p class="flight-meta">رحلات مباشرة وترانزيت سريع · أمتعة متنوعة</p>
+        <div class="price">1,150 <small>ريال / تبدأ من</small></div>
+        <ul class="ticks">
+          <li>مقارنة بين عدة شركات طيران</li>
+          <li>مواعيد مناسبة للوصول والمغادرة</li>
+          <li>إصدار فوري وتأكيد إلكتروني</li>
+        </ul>
+        <a class="btn select-offer-btn" data-offer="رحلات الخليج والشرق الأوسط" href="#contact">اطلب هذا المسار</a>
+      </article>
+
+      <article class="card plan reveal">
+        <span class="tag">الأكثر طلبًا</span>
+        <span class="flight-route">وجهات العمرة والزيارات</span>
+        <h3>أفريقيا وآسيا</h3>
+        <p class="flight-meta">تنسيق مواعيد السفر والوصول للمسافرين</p>
+        <div class="price">1,450 <small>ريال / تبدأ من</small></div>
+        <ul class="ticks">
+          <li>مناسب لرحلات العمرة والزيارات</li>
+          <li>توضيح سياسات الوزن والأمتعة</li>
+          <li>متابعة الرحلة حتى الهبوط</li>
+        </ul>
+        <a class="btn select-offer-btn" data-offer="رحلات أفريقيا وآسيا" href="#contact">اطلب هذا المسار</a>
+      </article>
+
+      <article class="card plan reveal">
+        <span class="flight-route">رحلات دولية بعيدة المدى</span>
+        <h3>أوروبا ووجهات متعددة</h3>
+        <p class="flight-meta">تذاكر ذهاب وعودة أو مسارات متعددة</p>
+        <div class="price">1,850 <small>ريال / تبدأ من</small></div>
+        <ul class="ticks">
+          <li>اختيار أنسب مسار وأقصر مدة سفر</li>
+          <li>خيارات مرنة للتعديل عند الحاجة</li>
+          <li>إرشادات العبور والمستندات</li>
+        </ul>
+        <a class="btn select-offer-btn" data-offer="رحلات أوروبا ووجهات متعددة" href="#contact">اطلب هذا المسار</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider" aria-hidden="true"></div>
+
+<!-- ===== أنواع الحجز ===== -->
+<section class="sec alt" id="ticket-types">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">أنواع الحجز</span>
+      <h2>اختر نظام التذكرة الأنسب لرحلتك</h2>
+      <p>نوازن بين التكلفة المناسبة ومرونة التعديل حسب طبيعة السفر.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card reveal">
+        <h3>تذاكر اقتصادية</h3>
+        <p>مناسبة للرحلات المحددة بمواعيد ثابتة وأفضل تكلفة متاحة.</p>
+        <ul class="ticks">
+          <li>سعر تنافسي على الخط المختار</li>
+          <li>توضيح كامل لشروط التذكرة</li>
+          <li>إصدار سريع ومباشر</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <h3>تذاكر مرنة</h3>
+        <p>تمنحك إمكانية تعديل المواعيد وفق سياسة شركة الطيران عند تغير الجدول.</p>
+        <ul class="ticks">
+          <li>مناسبة لرحلات العمرة والزيارات</li>
+          <li>تسهيل إعادة الجدولة</li>
+          <li>متابعة البدائل المتاحة</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <h3>حجوزات المجموعات</h3>
+        <p>تنسيق متكامل لرحلات العائلات والمجموعات والمعتمرين.</p>
+        <ul class="ticks">
+          <li>تجميع الحجوزات في ملف واضح</li>
+          <li>توحيد مواعيد الرحلات قدر الإمكان</li>
+          <li>دعم مباشر أثناء السفر</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider" aria-hidden="true"></div>
+
+<!-- ===== خطوات الحجز ===== -->
+<section class="sec" id="booking-steps">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">خطوات الحجز</span>
+      <h2>كيف نصدر تذكرتك؟</h2>
+      <p>خطوات مختصرة وواضحة لإتمام الحجز دون عناء.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><div><h3>إرسال بيانات الرحلة</h3><p>حدد نقطة الانطلاق والوجهة والتاريخ المطلوب وعدد المسافرين.</p></div></div>
+      <div class="step reveal"><div class="n">2</div><div><h3>مقارنة الخيارات</h3><p>نعرض لك الرحلات الأنسب من حيث السعر ومدة الطيران والأمتعة.</p></div></div>
+      <div class="step reveal"><div class="n">3</div><div><h3>اعتماد وإصدار التذكرة</h3><p>بعد تأكيدك نصدر التذكرة ونرسل لك نسخة الحجز كاملة.</p></div></div>
+      <div class="step reveal"><div class="n">4</div><div><h3>المتابعة حتى الوصول</h3><p>نبقى على تواصل لأي تعديل أو استفسار يخص الرحلة.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider" aria-hidden="true"></div>
+
+<!-- ===== تواصل معنا ===== -->
+<section class="sec alt" id="contact">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">تواصل معنا</span>
+      <h2>اطلب تذكرتك الآن</h2>
+      <p>أرسل تفاصيل رحلتك وسيتواصل معك فريقنا بأفضل الخيارات المتاحة.</p>
+    </div>
+
+    <div class="contact-single-box reveal" id="contact-box">
+      <div class="contact-pane contact-pane--inquiry">
+        <div class="pane-head">
+          <span class="p-ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2.1 2.1 0 0 0-3-3L13 8 4.8 6.2a.5.5 0 0 0-.5.8L8 12l-2 2-2-.5-.6.6 2.6 2.6 2.6 2.6.6-.6-.5-2 2-2 4.5 3.7a.5.5 0 0 0 .8-.5Z"/></svg>
+          </span>
+          <h3>طلب حجز تذكرة طيران</h3>
+        </div>
+
+        <form id="bookForm" novalidate>
+          <label class="line-field">
+            <input type="text" name="name" required autocomplete="name" aria-label="الاسم" placeholder="الاسم">
+          </label>
+
+          <label class="line-field">
+            <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" aria-label="رقم الهاتف" placeholder="رقم الهاتف">
+          </label>
+
+          <label class="line-field">
+            <select name="service" id="ticketServiceSelect" required aria-label="نوع الحجز أو المسار">
+              <option value="تذكرة طيران — ذهاب وعودة">تذكرة طيران — ذهاب وعودة</option>
+              <option value="تذكرة طيران — ذهاب فقط">تذكرة طيران — ذهاب فقط</option>
+              <option value="تذكرة طيران — متعددة الوجهات">تذكرة طيران — متعددة الوجهات</option>
+              <option value="رحلات الخليج والشرق الأوسط">رحلات الخليج والشرق الأوسط</option>
+              <option value="رحلات أفريقيا وآسيا">رحلات أفريقيا وآسيا</option>
+              <option value="رحلات أوروبا ووجهات متعددة">رحلات أوروبا ووجهات متعددة</option>
+            </select>
+          </label>
+
+          <label class="line-field">
+            <textarea name="msg" id="ticketMsgInput" aria-label="تفاصيل الرحلة" placeholder="تفاصيل الرحلة (الوجهة، التاريخ، عدد المسافرين أو ملاحظاتك)"></textarea>
+          </label>
+
+          <button class="btn" type="submit">إرسال الطلب</button>
+          <p class="hint">بإرسالك الطلب تُحال بياناتك إلى محادثة واتساب مع فريقنا.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== الفوتر ===== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a class="logo" href="index.html">ميمي أم روتانا</a>
+        <p>خدمات متكاملة في برامج العمرة، وإجراءات الزيارة العائلية، وحجز تذاكر الطيران — بوضوح وموثوقية ومتابعة مستمرة.</p>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="index.html#services">خدماتنا</a></li>
+          <li><a href="index.html#visit">زيارة عائلية</a></li>
+          <li><a href="index.html#umrah">عمرة</a></li>
+          <li><a href="tickets.html">حجز تذاكر</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل</h4>
+        <ul>
+          <li><a href="tel:+201000000000" dir="ltr">+20 100 000 0000</a></li>
+          <li><a href="https://wa.me/201000000000" target="_blank" rel="noopener">واتساب</a></li>
+          <li><a href="mailto:info@alofoq-recruitment.com">info@alofoq-recruitment.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> ميمي أم روتانا — جميع الحقوق محفوظة.</div>
+    <div class="crisco-credit-below">
+      <span>designed &amp; devolped by</span>
+      <a href="index.html" class="logo notranslate" dir="ltr" aria-label="CRISCODESIGN">
+        <span class="logo-a">CRISCO</span><span class="logo-b">DESIGN</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5 0a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.5a1.6 1.6 0 0 0 .3-.4.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4 5.2 5.2 0 0 0 3.2.6 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3Z"/></svg>
+</a>
+
+<script>
+(function(){
+  var WA = '201000000000';
+
+  var hero = document.getElementById('hero'),
+      slides = [].slice.call(hero.querySelectorAll('.slide')),
+      dots = document.getElementById('dots'),
+      DELAY = 6000, i = 0, timer, btns = [];
+
+  hero.style.setProperty('--t', DELAY + 'ms');
+
+  slides.forEach(function(_, k){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'الانتقال إلى الشريحة ' + (k + 1));
+    b.onclick = function(){ go(k); };
+    dots.appendChild(b);
+    btns.push(b);
+  });
+
+  function go(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+    btns.forEach(function(b, k){
+      b.classList.remove('on');
+      if (k === i){ void b.offsetWidth; b.classList.add('on'); }
+    });
+    restart();
+  }
+  function restart(){
+    clearTimeout(timer);
+    if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    timer = setTimeout(function(){ go(i + 1); }, DELAY);
+  }
+
+  hero.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft')  go(i + 1);
+    if (e.key === 'ArrowRight') go(i - 1);
+  });
+
+  var x0 = null;
+  hero.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+  hero.addEventListener('touchend', function(e){
+    if (x0 === null) return;
+    var d = e.changedTouches[0].clientX - x0;
+    if (Math.abs(d) > 50) go(d < 0 ? i + 1 : i - 1);
+    x0 = null;
+  });
+
+  hero.addEventListener('mouseenter', function(){ hero.classList.add('paused'); clearTimeout(timer); });
+  hero.addEventListener('mouseleave', function(){ hero.classList.remove('paused'); restart(); });
+
+  go(0);
+
+  var menu = document.getElementById('menu'), nav = document.getElementById('nav');
+  if (menu && nav) {
+    menu.onclick = function(e){
+      e.stopPropagation();
+      var open = nav.classList.toggle('open');
+      menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menu.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
+    };
+    nav.addEventListener('click', function(e){
+      if (e.target.closest('a')){
+        nav.classList.remove('open');
+        menu.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-label', 'فتح القائمة');
+      }
+    });
+    document.addEventListener('click', function(e){
+      if (nav.classList.contains('open') && !e.target.closest('#top')){
+        nav.classList.remove('open');
+        menu.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-label', 'فتح القائمة');
+      }
+    });
+  }
+
+  var top = document.getElementById('top');
+  function onScroll(){ top.classList.toggle('solid', window.scrollY > 40); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  var selectOfferBtns = document.querySelectorAll('.select-offer-btn');
+  var serviceSelect = document.getElementById('ticketServiceSelect');
+  var msgInput = document.getElementById('ticketMsgInput');
+  selectOfferBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var offerName = btn.getAttribute('data-offer');
+      if (offerName && serviceSelect){
+        var exists = [].some.call(serviceSelect.options, function(opt){
+          if (opt.value === offerName){
+            serviceSelect.value = offerName;
+            return true;
+          }
+          return false;
+        });
+        if (!exists && msgInput && !msgInput.value.trim()){
+          msgInput.value = 'أرغب بالاستفسار عن: ' + offerName;
+        }
+      }
+    });
+  });
+
+  var form = document.getElementById('bookForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    var d = new FormData(form);
+    var msg = 'مرحبًا ميمي أم روتانا\n'
+            + 'نوع الحجز / المسار: ' + d.get('service') + '\n'
+            + 'الاسم: ' + d.get('name') + '\n'
+            + 'الهاتف: ' + d.get('phone') + '\n'
+            + (d.get('msg') ? 'تفاصيل الرحلة: ' + d.get('msg') : '');
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
+  });
+
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:.14, rootMargin:'0px 0px -40px'});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
