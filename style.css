@@ -67,13 +67,17 @@ section[id]{scroll-margin-top:112px}
 .top-bar .bar-in{
   max-width:1180px;
   margin:0 auto;
-  padding:6px 20px;
+  padding:6px 14px;
   display:flex;
   align-items:center;
   justify-content:center;
-  flex-wrap:wrap;
-  gap:8px 36px;
+  flex-wrap:nowrap;
+  gap:clamp(10px, 2.5vw, 36px);
+  overflow-x:auto;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
 }
+.top-bar .bar-in::-webkit-scrollbar{display:none}
 
 .top-socials{
   display:inline-flex;
@@ -109,10 +113,12 @@ section[id]{scroll-margin-top:112px}
 .top-contact-info{
   display:inline-flex;
   align-items:center;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
   justify-content:center;
-  gap:6px 20px;
+  gap:clamp(10px, 2vw, 20px);
   color:rgba(255,255,255,.94);
+  white-space:nowrap;
+  flex-shrink:0;
 }
 .top-contact-info .info-item{
   display:inline-flex;
@@ -120,6 +126,7 @@ section[id]{scroll-margin-top:112px}
   gap:5px;
   text-decoration:none;
   color:rgba(255,255,255,.94);
+  white-space:nowrap;
   transition:color .2s ease;
 }
 .top-contact-info a.info-item:hover{
@@ -163,14 +170,14 @@ section[id]{scroll-margin-top:112px}
   align-items:center;
 }
 
-/* جسر غير مرئي لمنع اختفاء القائمة عند تحريك المؤشر من الزر إليها */
+/* جسر غير مرئي يمتد حتى نهاية الشريط العلوي السفلية لمنع اختفاء القائمة عند تحريك المؤشر إليها */
 .nav-item-dropdown::after{
   content:"";
   position:absolute;
   top:100%;
   right:0;
   left:0;
-  height:14px;
+  height:26px;
   background:transparent;
 }
 
@@ -206,7 +213,7 @@ section[id]{scroll-margin-top:112px}
 .nav-dropdown-menu{
   display:none;
   position:absolute;
-  top:calc(100% + 10px);
+  top:calc(100% + 22px);
   right:0;
   min-width:240px;
   background:rgba(20,46,56,.48);
@@ -322,7 +329,7 @@ section[id]{scroll-margin-top:112px}
 
 /* ===== السلايدر ===== */
 .hero{
-  position:relative;height:100svh;min-height:640px;max-height:920px;overflow:hidden;
+  position:relative;height:100svh;min-height:680px;max-height:920px;overflow:hidden;
   background:#142E38;color:var(--white);
 }
 .slide{
@@ -344,7 +351,7 @@ section[id]{scroll-margin-top:112px}
 
 .txt{
   position:relative;z-index:2;height:100%;max-width:1180px;margin:0 auto;
-  padding:135px 20px 96px;
+  padding:145px 20px 160px;
   display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
 }
 .txt h1,.txt h2{
@@ -568,13 +575,22 @@ section[id]{scroll-margin-top:112px}
 
 @media (max-width:860px){
   .top-bar .bar-in{
-    padding:6px 14px;
-    font-size:12px;
-    gap:6px 18px;
+    padding:6px 12px;
+    font-size:clamp(10.5px, 2.7vw, 12px);
+    gap:clamp(8px, 2.2vw, 18px);
+    justify-content:space-between;
+  }
+  .top-socials{
+    gap:clamp(8px, 2vw, 14px);
+    flex-shrink:0;
+  }
+  .top-socials a svg{
+    width:14px;
+    height:14px;
   }
   .top-contact-info{
-    gap:4px 12px;
-    font-size:11.5px;
+    gap:clamp(8px, 2vw, 14px);
+    font-size:clamp(10px, 2.5vw, 11.5px);
   }
 
   .top .in{
@@ -674,14 +690,19 @@ section[id]{scroll-margin-top:112px}
   .logo{font-size:17px}
 
   .hero{
-    height:100svh;
-    min-height:600px;
-    max-height:840px;
+    height:auto;
+    min-height:100svh;
+    max-height:none;
+    display:flex;
+    flex-direction:column;
   }
   .shade{
-    background:linear-gradient(0deg,rgba(20,46,56,.94) 0%,rgba(20,46,56,.66) 58%,rgba(20,46,56,.3) 100%);
+    background:linear-gradient(0deg,rgba(20,46,56,.95) 0%,rgba(20,46,56,.74) 55%,rgba(20,46,56,.36) 100%);
   }
-  .txt{justify-content:flex-end;padding-bottom:130px}
+  .txt{
+    justify-content:flex-end;
+    padding:125px 20px 215px;
+  }
   .sec{padding:64px 0}
 }
 
@@ -697,4 +718,99 @@ section[id]{scroll-margin-top:112px}
   .menu span{transition:none}
   .top nav,
   .nav-dropdown-menu{transition:none}
+}
+/* ===== تنسيق تقييم النجوم والتعليقات RTL ===== */
+.contact-pane form[dir="rtl"],
+  .contact-pane form[dir="rtl"] .line-field,
+  .contact-pane form[dir="rtl"] input,
+  .contact-pane form[dir="rtl"] select,
+  .contact-pane form[dir="rtl"] textarea{direction:rtl;text-align:right}
+  .rating-field{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;padding-bottom:10px;border-bottom:1.5px solid rgba(24,40,48,.16);direction:rtl}
+  .rating-label{font-size:15px;font-weight:700;color:#182830}
+  .star-rating{display:inline-flex;flex-direction:row-reverse;align-items:center;gap:4px;direction:ltr}
+  .star-rating input{position:absolute;opacity:0;pointer-events:none}
+  .star-rating label{cursor:pointer;font-size:24px;line-height:1;color:#C5D0D5;transition:color .2s ease,transform .15s ease;user-select:none}
+  .star-rating label:hover,
+  .star-rating label:hover ~ label,
+  .star-rating input:checked ~ label{color:#C89D54}
+  .star-rating label:hover{transform:scale(1.1)}
+  .comment-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px;direction:rtl}
+  .comment-stars{color:#C89D54;letter-spacing:1.5px;font-size:14.5px;direction:ltr}
+
+/* ===== صور برامج العمرة وأيقونات الأزرار ===== */
+.btn-icon{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn-icon svg{flex:none}
+.plan-img{width:100%;height:210px;overflow:hidden;background:rgba(43,91,108,.08)}
+.plan-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+#umrah .card.plan{
+  padding:0;
+  overflow:hidden;
+  box-shadow:none;
+  transform:none;
+  transition:box-shadow .3s ease, border-color .3s ease;
+}
+#umrah .card.plan:hover{
+  transform:none;
+  border-color:rgba(43,91,108,.42);
+  box-shadow:0 12px 28px rgba(43,91,108,.16);
+}
+#umrah .card.plan .tag{
+  z-index:2;
+}
+#umrah .card.plan .plan-img{
+  width:100%;
+  height:172px;
+  border-radius:0;
+  margin-bottom:0;
+  overflow:hidden;
+}
+#umrah .card.plan .plan-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .45s ease;
+}
+#umrah .card.plan:hover .plan-img img{
+  transform:scale(1.07);
+}
+#umrah .card.plan .plan-body{
+  padding:18px 22px 20px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+#umrah .card.plan .ic{
+  width:46px;
+  height:46px;
+  border-radius:12px;
+  margin-bottom:12px;
+}
+#umrah .card.plan h3{
+  font-size:19.5px;
+  margin-bottom:5px;
+}
+#umrah .card.plan .plan-body > p{
+  font-size:15px;
+  line-height:1.65;
+}
+#umrah .card.plan .ticks{
+  margin:12px 0 16px;
+  gap:6px;
+  font-size:15px;
+}
+#umrah .card.plan .btn{
+  margin-top:auto;
+  padding:9px 20px;
+  background:transparent;
+  color:var(--sage);
+  border:1.5px solid var(--sage);
+  transition:background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+#umrah .card.plan .btn:hover{
+  background:var(--sage);
+  color:var(--sage-ink);
+  border-color:var(--sage);
+  transform:none;
 }
