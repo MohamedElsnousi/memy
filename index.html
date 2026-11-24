@@ -11,277 +11,98 @@
 <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Almarai:wght@300;400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .sec-divider{
-    max-width:1180px;
-    margin:0 auto;
-    padding:0 20px;
-  }
-  .sec-divider::before{
-    content:"";
-    display:block;
-    height:1px;
-    background:rgba(24,40,48,.14);
-  }
-
-  .hero .dots{
-    bottom:calc(104px + env(safe-area-inset-bottom,0px));
-  }
-
+  .sec-divider{max-width:1180px;margin:0 auto;padding:0 20px}
+  .sec-divider::before{content:"";display:block;height:1px;background:rgba(24,40,48,.14)}
+  .hero .dots{bottom:calc(104px + env(safe-area-inset-bottom,0px))}
   .hero-stats-float{
-    position:absolute;
-    z-index:5;
-    left:50%;
-    bottom:0;
-    transform:translateX(-50%);
-    width:min(1140px, calc(100% - 32px));
-    background:#ffffff;
-    color:#182830;
+    position:absolute;z-index:5;left:50%;bottom:0;transform:translateX(-50%);
+    width:min(1140px, calc(100% - 32px));background:#ffffff;color:#182830;
     box-shadow:0 -8px 22px rgba(20, 46, 56, .12);
     padding:14px 22px calc(14px + env(safe-area-inset-bottom,0px));
   }
-  .hero-stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4, minmax(120px, 1fr));
-    gap:16px;
-    text-align:center;
-    align-items:center;
-  }
-  .hero-stats-grid .stat b{
-    font-size:28px;
-    color:#2B5B6C;
-  }
-  .hero-stats-grid .stat span{
-    font-size:14px;
-    color:#5B6D75;
-  }
-
-  .reviews-marquee{
-    overflow:hidden;
-    width:100%;
-    padding:8px 0 18px;
-  }
-  .reviews-track{
-    display:flex;
-    gap:22px;
-    width:max-content;
-    animation:reviewsRightToLeft 30s linear infinite;
-  }
-  .reviews-marquee:hover .reviews-track{
-    animation-play-state:paused;
-  }
+  .hero-stats-grid{display:grid;grid-template-columns:repeat(4, minmax(120px, 1fr));gap:16px;text-align:center;align-items:center}
+  .hero-stats-grid .stat b{font-size:28px;color:#2B5B6C}
+  .hero-stats-grid .stat span{font-size:14px;color:#5B6D75}
+  .reviews-marquee{overflow:hidden;width:100%;padding:8px 0 18px}
+  .reviews-track{display:flex;gap:22px;width:max-content;animation:reviewsRightToLeft 30s linear infinite}
+  .reviews-marquee:hover .reviews-track{animation-play-state:paused}
   .review-slide{
-    flex:0 0 340px;
-    max-width:85vw;
-    background:#ffffff;
-    border:1px solid rgba(24,40,48,.13);
-    border-radius:16px;
-    padding:26px;
-    box-shadow:0 8px 22px rgba(20,46,56,.06);
-    display:flex;
-    flex-direction:column;
+    flex:0 0 340px;max-width:85vw;background:#ffffff;border:1px solid rgba(24,40,48,.13);
+    border-radius:16px;padding:26px;box-shadow:0 8px 22px rgba(20,46,56,.06);display:flex;flex-direction:column;
     transition:transform .3s ease, box-shadow .35s ease, border-color .3s ease;
   }
-  .review-slide:hover{
-    transform:translateY(-5px);
-    border-color:rgba(200,157,84,.55);
-    box-shadow:0 18px 38px rgba(20,46,56,.14);
-  }
-  .review-slide .stars{
-    color:#C89D54;
-    letter-spacing:2px;
-    margin-bottom:12px;
-    font-size:15px;
-  }
-  .review-slide .comment-quote{
-    color:#182830;
-    font-size:16.5px;
-    margin:0 0 18px;
-    font-weight:300;
-    line-height:1.8;
-  }
-  .review-slide .author-name{
-    margin-top:auto;
-    color:#2B5B6C;
-    font-size:15px;
-    font-weight:700;
-  }
-
-  @keyframes reviewsRightToLeft{
-    0%{transform:translateX(0)}
-    100%{transform:translateX(-50%)}
-  }
-
+  .review-slide:hover{transform:translateY(-5px);border-color:rgba(200,157,84,.55);box-shadow:0 18px 38px rgba(20,46,56,.14)}
+  .review-slide .stars{color:#C89D54;letter-spacing:2px;margin-bottom:12px;font-size:15px}
+  .review-slide .comment-quote{color:#182830;font-size:16.5px;margin:0 0 18px;font-weight:300;line-height:1.8}
+  .review-slide .author-name{margin-top:auto;color:#2B5B6C;font-size:15px;font-weight:700}
+  @keyframes reviewsRightToLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
   @media (prefers-reduced-motion:reduce){
     .reviews-track{animation:none;flex-wrap:wrap;width:auto}
     .review-slide{flex:1 1 280px}
     .review-slide:hover{transform:none}
   }
-
   section#contact.sec{padding-bottom:0}
-
   .contact-float-box{
-    position:relative;
-    z-index:3;
-    background:#ffffff;
-    color:#182830;
-    border:0;
-    border-radius:0;
-    margin-top:-18px;
-    margin-bottom:0;
-    box-shadow:0 -10px 28px rgba(20,46,56,.09);
-    display:grid;
-    grid-template-columns:1fr 1px 1fr;
-    align-items:stretch;
+    position:relative;z-index:3;background:#ffffff;color:#182830;border:0;border-radius:0;
+    margin-top:-18px;margin-bottom:0;box-shadow:0 -10px 28px rgba(20,46,56,.09);
+    display:grid;grid-template-columns:1fr 1px 1fr;align-items:stretch;
   }
-  .contact-divider{
-    background:rgba(24,40,48,.14);
-    width:1px;
-    height:auto;
-  }
-  .contact-pane{
-    padding:34px 32px 42px;
-    background:#ffffff;
-    display:flex;
-    flex-direction:column;
-  }
-
-  .contact-pane--inquiry{
-    --pane-accent:#2B5B6C;
-    --pane-accent-soft:rgba(43,91,108,.12);
-    --pane-btn-ink:#ffffff;
-  }
-  .contact-pane--comment{
-    --pane-accent:#9A712D;
-    --pane-accent-soft:rgba(200,157,84,.16);
-    --pane-btn-ink:#ffffff;
-  }
-
-  .pane-head{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:22px;
-  }
-  .pane-head .p-ic{
-    width:38px;
-    height:38px;
-    border-radius:10px;
-    background:var(--pane-accent-soft);
-    color:var(--pane-accent);
-    display:grid;
-    place-items:center;
-    flex:none;
-  }
-  .pane-head h3{
-    margin:0;
-    font-size:21px;
-    color:var(--pane-accent);
-  }
-
-  .line-field{
-    display:block;
-    margin-bottom:20px;
-  }
-  .line-field input,
-  .line-field select,
-  .line-field textarea{
-    width:100%;
-    padding:10px 2px;
-    background:transparent;
-    color:#182830;
-    border:0;
-    border-bottom:1.5px solid rgba(24,40,48,.24);
-    border-radius:0;
-    font:400 16px Almarai,sans-serif;
+  .contact-divider{background:rgba(24,40,48,.14);width:1px;height:auto}
+  .contact-pane{padding:34px 32px 42px;background:#ffffff;display:flex;flex-direction:column}
+  .contact-pane--inquiry{--pane-accent:#2B5B6C;--pane-accent-soft:rgba(43,91,108,.12);--pane-btn-ink:#ffffff}
+  .contact-pane--comment{--pane-accent:#9A712D;--pane-accent-soft:rgba(200,157,84,.16);--pane-btn-ink:#ffffff}
+  .pane-head{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+  .pane-head .p-ic{width:38px;height:38px;border-radius:10px;background:var(--pane-accent-soft);color:var(--pane-accent);display:grid;place-items:center;flex:none}
+  .pane-head h3{margin:0;font-size:21px;color:var(--pane-accent)}
+  .line-field{display:block;margin-bottom:20px}
+  .line-field input,.line-field select,.line-field textarea{
+    width:100%;padding:10px 2px;background:transparent;color:#182830;border:0;
+    border-bottom:1.5px solid rgba(24,40,48,.24);border-radius:0;font:400 16px Almarai,sans-serif;
     transition:border-color .2s ease;
   }
-  .line-field textarea{
-    min-height:84px;
-    resize:vertical;
-  }
-  .line-field input::placeholder,
-  .line-field textarea::placeholder{
-    color:#73848C;
-  }
-  .line-field input:focus,
-  .line-field select:focus,
-  .line-field textarea:focus{
-    outline:none;
-    border-bottom-color:var(--pane-accent);
-  }
-
+  .line-field textarea{min-height:84px;resize:vertical}
+  .line-field input::placeholder,.line-field textarea::placeholder{color:#73848C}
+  .line-field input:focus,.line-field select:focus,.line-field textarea:focus{outline:none;border-bottom-color:var(--pane-accent)}
   .contact-pane .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    align-self:flex-start;
     background:transparent;
     color:var(--pane-accent);
     border:1.5px solid var(--pane-accent);
-    border-radius:0;
+    border-radius:10px;
+    padding:10px 22px;
     transition:background-color .25s ease, color .25s ease, transform .2s ease;
   }
-  .contact-pane .btn:hover{
-    background:var(--pane-accent);
-    color:var(--pane-btn-ink);
-    transform:translateY(-1px);
+  .contact-pane .btn svg{
+    width:17px;
+    height:17px;
+    flex:none;
   }
+  .contact-pane .btn:hover{background:var(--pane-accent);color:var(--pane-btn-ink);transform:translateY(-1px)}
   .contact-pane .hint{color:#5B6D75}
-
-  .comments-feed{
-    margin-top:20px;
-    display:grid;
-    gap:10px;
-  }
-  .comment-item{
-    background:#ffffff;
-    border-bottom:1px solid rgba(24,40,48,.12);
-    padding:10px 2px;
-  }
-  .comment-item strong{
-    display:block;
-    font-size:15px;
-    color:var(--pane-accent);
-    margin-bottom:3px;
-  }
-  .comment-item p{
-    margin:0;
-    font-size:14.5px;
-    color:#44565E;
-  }
-
+  .comments-feed{margin-top:20px;display:grid;gap:10px}
+  .comment-item{background:#ffffff;border-bottom:1px solid rgba(24,40,48,.12);padding:10px 2px}
+  .comment-item strong{display:block;font-size:15px;color:var(--pane-accent);margin-bottom:3px}
+  .comment-item p{margin:0;font-size:14.5px;color:#44565E}
   .crisco-credit-below{
-    margin-top:8px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:7px;
-    direction:ltr;
-    font-family:'Space Grotesk', system-ui, -apple-system, sans-serif;
-    font-size:0.82rem;
-    color:rgba(255,255,255,.72);
+    margin-top:8px;display:flex;align-items:center;justify-content:center;gap:7px;direction:ltr;
+    font-family:'Space Grotesk', system-ui, -apple-system, sans-serif;font-size:0.82rem;color:rgba(255,255,255,.72);
   }
   .crisco-credit-below .logo{
-    font-family:'Space Grotesk', system-ui, -apple-system, sans-serif;
-    font-size:0.95rem;
-    font-weight:700;
-    letter-spacing:0.6px;
-    text-transform:uppercase;
-    display:inline-block;
-    text-decoration:none;
+    font-family:'Space Grotesk', system-ui, -apple-system, sans-serif;font-size:0.95rem;font-weight:700;
+    letter-spacing:0.6px;text-transform:uppercase;display:inline-block;text-decoration:none;
   }
-  .crisco-credit-below .logo-a{
-    color:#06B6D4;
-  }
-  .crisco-credit-below .logo-b{
-    color:#8B5CF6;
-    font-weight:500;
-  }
-
+  .crisco-credit-below .logo-a{color:#06B6D4}
+  .crisco-credit-below .logo-b{color:#8B5CF6;font-weight:500}
   @media (max-width:900px){
     .contact-float-box{grid-template-columns:1fr}
     .contact-divider{width:100%;height:1px}
     .contact-pane{padding:26px 20px 32px}
   }
-
   @media (max-width:860px){
-    .hero{min-height:760px}
     .hero .txt{padding-bottom:175px}
     .hero .dots{bottom:calc(154px + env(safe-area-inset-bottom,0px))}
     .hero-stats-float{padding:12px 14px calc(12px + env(safe-area-inset-bottom,0px))}
@@ -292,40 +113,26 @@
 </head>
 <body>
 
-<!-- ===== الشريط العلوي الموحد ===== -->
 <header class="top" id="top">
-  <!-- أعلى الشريط في المنتصف: واتساب وفيسبوك على اليمين، والهاتف والبريد والعنوان على اليسار -->
   <div class="top-bar">
     <div class="bar-in">
       <div class="top-socials" aria-label="واتساب وفيسبوك">
-        <!-- واتساب -->
         <a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="واتساب" title="واتساب">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5 0a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.5a1.6 1.6 0 0 0 .3-.4.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4 5.2 5.2 0 0 0 3.2.6 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3Z"/></svg>
         </a>
-
-        <!-- فيسبوك -->
         <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="فيسبوك" title="فيسبوك">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5Z"/></svg>
         </a>
       </div>
 
       <div class="top-contact-info">
-        <a class="info-item" href="tel:+201000000000" dir="ltr">
-          <span>+20 100 000 0000</span>
-        </a>
-
-        <a class="info-item" href="mailto:info@alofoq-recruitment.com">
-          <span>info@alofoq-recruitment.com</span>
-        </a>
-
-        <span class="info-item">
-          <span>العنوان: الرياض — حي العليا</span>
-        </span>
+        <a class="info-item" href="tel:+201000000000" dir="ltr"><span>+20 100 000 0000</span></a>
+        <a class="info-item" href="mailto:info@alofoq-recruitment.com"><span>info@alofoq-recruitment.com</span></a>
+        <span class="info-item"><span>العنوان: الرياض — حي العليا</span></span>
       </div>
     </div>
   </div>
 
-  <!-- أسفل الشريط العلوي: الشعار + الروابط + الأزرار -->
   <div class="in">
     <a class="logo" href="index.html">ميمي أم روتانا</a>
 
@@ -334,18 +141,41 @@
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/></svg>
         <span>الرئيسية</span>
       </a>
-      <a href="index.html#services">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-        <span>خدماتنا</span>
-      </a>
-      <a href="index.html#visit">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="17" cy="9" r="2"/><path d="M17 14a3 3 0 0 1 3 3v3"/></svg>
-        <span>زيارة عائلية</span>
-      </a>
+
+      <div class="nav-item-dropdown" id="servicesDropdown">
+        <button type="button" class="nav-dropdown-trigger" id="servicesTrigger" aria-expanded="false" aria-controls="servicesMenu">
+          <span class="trigger-left">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            <span>خدماتنا</span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+
+        <div class="nav-dropdown-menu" id="servicesMenu" role="menu">
+          <a href="accommodation.html" role="menuitem">توفير إقامات</a>
+          <a href="work-procedures.html" role="menuitem">استكمال إجراءات العمل</a>
+        </div>
+      </div>
+
+      <div class="nav-item-dropdown" id="visitDropdown">
+        <button type="button" class="nav-dropdown-trigger" id="visitTrigger" aria-expanded="false" aria-controls="visitMenu">
+          <span class="trigger-left">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="17" cy="9" r="2"/><path d="M17 14a3 3 0 0 1 3 3v3"/></svg>
+            <span>زيارة عائلية</span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+
+        <div class="nav-dropdown-menu" id="visitMenu" role="menu">
+          <a href="family-recruitment.html" role="menuitem">استكمال الاستقدام العائلي</a>
+        </div>
+      </div>
+
       <a href="index.html#umrah">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M10 21v-5h4v5"/></svg>
         <span>عمرة</span>
       </a>
+
       <a href="tickets.html">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5a2.1 2.1 0 0 0-3-3L13 8 4.8 6.2a.5.5 0 0 0-.5.8L8 12l-2 2-2-.5-.6.6 2.6 2.6 2.6 2.6.6-.6-.5-2 2-2 4.5 3.7a.5.5 0 0 0 .8-.5Z"/></svg>
         <span>حجز تذاكر</span>
@@ -353,25 +183,19 @@
     </nav>
 
     <div class="top-actions">
-      <a class="btn top-ghost-btn" href="#contact">اطلب استقداماً</a>
+      <a class="btn top-ghost-btn" href="family-recruitment.html">اطلب استقداماً</a>
       <a class="btn top-white-btn" href="#contact">تواصل معنا</a>
     </div>
 
     <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" aria-label="فتح القائمة">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<!-- ===== الهيرو ===== -->
 <section class="hero" id="hero" aria-roledescription="carousel" aria-label="خدمات ميمي أم روتانا">
-
   <div class="slide on" role="group" aria-label="1 من 3">
-    <div class="bg"
-         style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80')"
-         role="img" aria-label="تنظيم رحلات العمرة والزيارات"></div>
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80')" role="img" aria-label="تنظيم رحلات العمرة والزيارات"></div>
     <div class="shade"></div>
     <div class="txt">
       <nav class="hero-crumb" aria-label="مسار الصفحة">
@@ -384,9 +208,7 @@
   </div>
 
   <div class="slide" role="group" aria-label="2 من 3">
-    <div class="bg"
-         style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80')"
-         role="img" aria-label="تجهيز المستندات وإجراءات الزيارة العائلية"></div>
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80')" role="img" aria-label="تجهيز المستندات وإجراءات الزيارة العائلية"></div>
     <div class="shade"></div>
     <div class="txt">
       <nav class="hero-crumb" aria-label="مسار الصفحة">
@@ -399,9 +221,7 @@
   </div>
 
   <div class="slide" role="group" aria-label="3 من 3">
-    <div class="bg"
-         style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80')"
-         role="img" aria-label="رحلات سفر وتذاكر طيران"></div>
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80')" role="img" aria-label="رحلات سفر وتذاكر طيران"></div>
     <div class="shade"></div>
     <div class="txt">
       <nav class="hero-crumb" aria-label="مسار الصفحة">
@@ -425,16 +245,15 @@
   </div>
 </section>
 
-<!-- ===== الخدمات ===== -->
 <section class="sec" id="services">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow">خدماتنا</span>
       <h2>خدمات متكاملة للسفر والتأشيرات</h2>
-      <p>نقدم باقة متكاملة تشمل تنظيم رحلات العمرة، وإجراءات الزيارة العائلية، وحجز تذاكر الطيران بمتابعة مستمرة.</p>
+      <p>نقدم باقة متكاملة تشمل تنظيم رحلات العمرة، وإجراءات الزيارة العائلية، وحجز تذاكر الطيران وتوفير الإقامات واستكمال إجراءات العمل بمتابعة مستمرة.</p>
     </div>
     <div class="cards">
-      <article class="card reveal">
+      <article class="card">
         <div class="ic" aria-hidden="true">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M10 21v-5h4v5"/></svg>
         </div>
@@ -448,7 +267,7 @@
         <a class="btn" href="#umrah" style="margin-top:20px;text-align:center">استعرض برامج العمرة</a>
       </article>
 
-      <article class="card reveal">
+      <article class="card">
         <div class="ic" aria-hidden="true">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="17" cy="9" r="2"/><path d="M17 14a3 3 0 0 1 3 3v3"/></svg>
         </div>
@@ -462,7 +281,7 @@
         <a class="btn" href="#visit" style="margin-top:20px;text-align:center">تفاصيل الزيارة العائلية</a>
       </article>
 
-      <article class="card reveal">
+      <article class="card">
         <div class="ic" aria-hidden="true">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2.1 2.1 0 0 0-3-3L13 8 4.8 6.2a.5.5 0 0 0-.5.8L8 12l-2 2-2-.5-.6.6 2.6 2.6 2.6 2.6.6-.6-.5-2 2-2 4.5 3.7a.5.5 0 0 0 .8-.5Z"/></svg>
         </div>
@@ -475,13 +294,40 @@
         </ul>
         <a class="btn" href="tickets.html" style="margin-top:20px;text-align:center">احجز تذكرتك الآن</a>
       </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 15h4"/></svg>
+        </div>
+        <h3>توفير إقامات</h3>
+        <p>ترتيب ومتابعة إجراءات توفير الإقامات وتحديث البيانات بكل وضوح ودقة.</p>
+        <ul class="ticks">
+          <li>مراجعة اشتراطات ومتطلبات الإقامة</li>
+          <li>تنسيق المعاملات والمستندات اللازمة</li>
+          <li>متابعة مستمرة حتى إنجاز الطلب</li>
+        </ul>
+        <a class="btn" href="accommodation.html" style="margin-top:20px;text-align:center">تفاصيل توفير الإقامات</a>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M12 12v4"/></svg>
+        </div>
+        <h3>استكمال إجراءات العمل</h3>
+        <p>متابعة وتجهيز معاملات وإجراءات العمل للأفراد والمنشآت وفق الخطوات المعتمدة.</p>
+        <ul class="ticks">
+          <li>تجهيز الملفات وتدقيق البيانات</li>
+          <li>متابعة الإجراءات وتحديث الحالة</li>
+          <li>تنسيق المواعيد والتسليم بانتظام</li>
+        </ul>
+        <a class="btn" href="work-procedures.html" style="margin-top:20px;text-align:center">تفاصيل إجراءات العمل</a>
+      </article>
     </div>
   </div>
 </section>
 
 <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ===== زيارة عائلية ===== -->
 <section class="sec alt" id="visit">
   <div class="wrap">
     <div class="head reveal">
@@ -491,14 +337,23 @@
     </div>
     <div class="cards">
       <article class="card reveal">
+        <div class="ic" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+        </div>
         <h3>مراجعة وتجهيز الأوراق</h3>
         <p>التأكد من اكتمال المستندات والبيانات المطلوبة قبل رفع الطلب لتقليل التأخير.</p>
       </article>
       <article class="card reveal">
+        <div class="ic" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+        </div>
         <h3>تنسيق المواعيد والمتابعة</h3>
         <p>متابعة حالة الطلب أولاً بأول وإبلاغك بأي مستجدات أو ملاحظات رسمية.</p>
       </article>
       <article class="card reveal">
+        <div class="ic" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2.1 2.1 0 0 0-3-3L13 8 4.8 6.2a.5.5 0 0 0-.5.8L8 12l-2 2-2-.5-.6.6 2.6 2.6 2.6 2.6.6-.6-.5-2 2-2 4.5 3.7a.5.5 0 0 0 .8-.5Z"/></svg>
+        </div>
         <h3>تنسيق رحلة الوصول</h3>
         <p>توفير حجوزات الطيران المناسبة لمواعيد الزيارة والعودة بكل مرونة.</p>
       </article>
@@ -508,7 +363,6 @@
 
 <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ===== عمرة ===== -->
 <section class="sec" id="umrah">
   <div class="wrap">
     <div class="head reveal">
@@ -559,7 +413,6 @@
 
 <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ===== لماذا نحن ===== -->
 <section class="sec alt" id="why">
   <div class="wrap">
     <div class="head reveal">
@@ -586,7 +439,6 @@
 
 <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ===== آراء العملاء ===== -->
 <section class="sec" id="reviews">
   <div class="wrap">
     <div class="head reveal">
@@ -602,31 +454,26 @@
         <p class="comment-quote">«تعامل راقٍ ومتابعة دقيقة لإجراءات الزيارة العائلية، وتمت جميع الخطوات في الوقت المتفق عليه.»</p>
         <div class="author-name">طارق المنصور — الرياض</div>
       </article>
-
       <article class="review-slide">
         <div class="stars" aria-label="5 من 5">★★★★★</div>
         <p class="comment-quote">«تنظيم ممتاز لرحلة العمرة من التأشيرة وحتى الفنادق والتنقلات، خدمة تبعث على الاطمئنان.»</p>
         <div class="author-name">عائلة الصالح — جدة</div>
       </article>
-
       <article class="review-slide">
         <div class="stars" aria-label="5 من 5">★★★★★</div>
         <p class="comment-quote">«وضوح في الأسعار وسرعة في الرد وحجز التذاكر، تجربة مريحة من البداية للنهاية.»</p>
         <div class="author-name">نورة العتيبي — الخبر</div>
       </article>
-
       <article class="review-slide" aria-hidden="true">
         <div class="stars">★★★★★</div>
         <p class="comment-quote">«تعامل راقٍ ومتابعة دقيقة لإجراءات الزيارة العائلية، وتمت جميع الخطوات في الوقت المتفق عليه.»</p>
         <div class="author-name">طارق المنصور — الرياض</div>
       </article>
-
       <article class="review-slide" aria-hidden="true">
         <div class="stars">★★★★★</div>
         <p class="comment-quote">«تنظيم ممتاز لرحلة العمرة من التأشيرة وحتى الفنادق والتنقلات، خدمة تبعث على الاطمئنان.»</p>
         <div class="author-name">عائلة الصالح — جدة</div>
       </article>
-
       <article class="review-slide" aria-hidden="true">
         <div class="stars">★★★★★</div>
         <p class="comment-quote">«وضوح في الأسعار وسرعة في الرد وحجز التذاكر، تجربة مريحة من البداية للنهاية.»</p>
@@ -638,7 +485,6 @@
 
 <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ===== التواصل ===== -->
 <section class="sec alt" id="contact">
   <div class="wrap">
     <div class="head reveal">
@@ -660,26 +506,27 @@
           <label class="line-field">
             <input type="text" name="name" required autocomplete="name" aria-label="الاسم أو اسم الجهة" placeholder="الاسم أو اسم الجهة">
           </label>
-
           <label class="line-field">
             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" aria-label="رقم الهاتف" placeholder="رقم الهاتف">
           </label>
-
           <label class="line-field">
             <select name="service" required aria-label="نوع الخدمة المطلوبة">
               <option value="عمرة">عمرة</option>
               <option value="زيارة عائلية">زيارة عائلية</option>
               <option value="حجز تذاكر">حجز تذاكر</option>
-              <option value="طلب استقدام">طلب استقدام</option>
+              <option value="توفير إقامات">توفير إقامات</option>
+              <option value="استكمال إجراءات العمل">استكمال إجراءات العمل</option>
+              <option value="استكمال الاستقدام العائلي">استكمال الاستقدام العائلي</option>
               <option value="استفسار عام">استفسار عام</option>
             </select>
           </label>
-
           <label class="line-field">
             <textarea name="msg" aria-label="تفاصيل الطلب" placeholder="تفاصيل الطلب (عدد المسافرين، الوجهة، التاريخ، أو ملاحظاتك)"></textarea>
           </label>
-
-          <button class="btn" type="submit">إرسال</button>
+          <button class="btn" type="submit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <span>إرسال</span>
+          </button>
           <p class="hint">بإرسالك الطلب تُحال بياناتك إلى محادثة واتساب مع فريقنا.</p>
         </form>
       </div>
@@ -698,12 +545,13 @@
           <label class="line-field">
             <input type="text" name="commenterName" required aria-label="الاسم" placeholder="الاسم">
           </label>
-
           <label class="line-field">
             <textarea name="commentText" required aria-label="إضافة تعليق" placeholder="إضافة تعليق"></textarea>
           </label>
-
-          <button class="btn" type="submit">إضافة</button>
+          <button class="btn" type="submit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            <span>إضافة</span>
+          </button>
         </form>
 
         <div class="comments-feed" id="commentsFeed" aria-live="polite"></div>
@@ -712,21 +560,28 @@
   </div>
 </section>
 
-<!-- ===== الفوتر ===== -->
 <footer class="foot">
   <div class="wrap">
     <div class="grid">
       <div>
         <a class="logo" href="index.html">ميمي أم روتانا</a>
         <p>خدمات متكاملة في برامج العمرة، وإجراءات الزيارة العائلية، وحجز تذاكر الطيران — بوضوح وموثوقية ومتابعة مستمرة.</p>
+        <div class="foot-socials" aria-label="واتساب وفيسبوك">
+          <a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="واتساب" title="واتساب">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5 0a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.5a1.6 1.6 0 0 0 .3-.4.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4 5.2 5.2 0 0 0 3.2.6 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3Z"/></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="فيسبوك" title="فيسبوك">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5Z"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <h4>روابط سريعة</h4>
         <ul>
           <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="index.html#services">خدماتنا</a></li>
-          <li><a href="index.html#visit">زيارة عائلية</a></li>
-          <li><a href="index.html#umrah">عمرة</a></li>
+          <li><a href="accommodation.html">توفير إقامات</a></li>
+          <li><a href="work-procedures.html">استكمال إجراءات العمل</a></li>
+          <li><a href="family-recruitment.html">استكمال الاستقدام العائلي</a></li>
           <li><a href="tickets.html">حجز تذاكر</a></li>
         </ul>
       </div>
@@ -756,101 +611,94 @@
 <script>
 (function(){
   var WA = '201000000000';
-
-  var hero = document.getElementById('hero'),
-      slides = [].slice.call(hero.querySelectorAll('.slide')),
-      dots = document.getElementById('dots'),
-      DELAY = 6000, i = 0, timer, btns = [];
-
+  var hero = document.getElementById('hero'), slides = [].slice.call(hero.querySelectorAll('.slide')), dots = document.getElementById('dots'), DELAY = 6000, i = 0, timer, btns = [];
   hero.style.setProperty('--t', DELAY + 'ms');
-
   slides.forEach(function(_, k){
-    var b = document.createElement('button');
-    b.type = 'button';
+    var b = document.createElement('button'); b.type = 'button';
     b.setAttribute('aria-label', 'الانتقال إلى الشريحة ' + (k + 1));
-    b.onclick = function(){ go(k); };
-    dots.appendChild(b);
-    btns.push(b);
+    b.onclick = function(){ go(k); }; dots.appendChild(b); btns.push(b);
   });
-
   function go(n){
     i = (n + slides.length) % slides.length;
     slides.forEach(function(s, k){ s.classList.toggle('on', k === i); });
-    btns.forEach(function(b, k){
-      b.classList.remove('on');
-      if (k === i){ void b.offsetWidth; b.classList.add('on'); }
-    });
+    btns.forEach(function(b, k){ b.classList.remove('on'); if (k === i){ void b.offsetWidth; b.classList.add('on'); } });
     restart();
   }
-  function restart(){
-    clearTimeout(timer);
-    if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-    timer = setTimeout(function(){ go(i + 1); }, DELAY);
-  }
-
-  hero.addEventListener('keydown', function(e){
-    if (e.key === 'ArrowLeft')  go(i + 1);
-    if (e.key === 'ArrowRight') go(i - 1);
-  });
-
+  function restart(){ clearTimeout(timer); if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return; timer = setTimeout(function(){ go(i + 1); }, DELAY); }
+  hero.addEventListener('keydown', function(e){ if (e.key === 'ArrowLeft') go(i + 1); if (e.key === 'ArrowRight') go(i - 1); });
   var x0 = null;
   hero.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
-  hero.addEventListener('touchend', function(e){
-    if (x0 === null) return;
-    var d = e.changedTouches[0].clientX - x0;
-    if (Math.abs(d) > 50) go(d < 0 ? i + 1 : i - 1);
-    x0 = null;
-  });
-
+  hero.addEventListener('touchend', function(e){ if (x0 === null) return; var d = e.changedTouches[0].clientX - x0; if (Math.abs(d) > 50) go(d < 0 ? i + 1 : i - 1); x0 = null; });
   hero.addEventListener('mouseenter', function(){ hero.classList.add('paused'); clearTimeout(timer); });
   hero.addEventListener('mouseleave', function(){ hero.classList.remove('paused'); restart(); });
-
   go(0);
 
+  function bindDropdown(triggerId, menuId, wrapperId){
+    var trigger = document.getElementById(triggerId);
+    var ddMenu = document.getElementById(menuId);
+    if (!trigger || !ddMenu) return;
+
+    trigger.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = ddMenu.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      document.querySelectorAll('.nav-dropdown-menu.open').forEach(function(otherMenu){
+        if (otherMenu !== ddMenu){
+          otherMenu.classList.remove('open');
+          var otherWrapper = otherMenu.closest('.nav-item-dropdown');
+          var otherBtn = otherWrapper ? otherWrapper.querySelector('.nav-dropdown-trigger') : null;
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    ddMenu.addEventListener('click', function(e){
+      e.stopPropagation();
+    });
+
+    document.addEventListener('click', function(e){
+      if (!e.target.closest('#' + wrapperId)){
+        ddMenu.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  bindDropdown('servicesTrigger', 'servicesMenu', 'servicesDropdown');
+  bindDropdown('visitTrigger', 'visitMenu', 'visitDropdown');
+
   var menu = document.getElementById('menu'), nav = document.getElementById('nav');
-  if (menu && nav) {
+  if (menu && nav){
     menu.onclick = function(e){
       e.stopPropagation();
       var open = nav.classList.toggle('open');
       menu.setAttribute('aria-expanded', open ? 'true' : 'false');
       menu.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
+      if (!open){
+        document.querySelectorAll('.nav-dropdown-menu.open').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-dropdown-trigger[aria-expanded="true"]').forEach(function(b){ b.setAttribute('aria-expanded', 'false'); });
+      }
     };
-    nav.addEventListener('click', function(e){
-      if (e.target.closest('a')){
-        nav.classList.remove('open');
-        menu.setAttribute('aria-expanded', 'false');
-        menu.setAttribute('aria-label', 'فتح القائمة');
-      }
-    });
-    document.addEventListener('click', function(e){
-      if (nav.classList.contains('open') && !e.target.closest('#top')){
-        nav.classList.remove('open');
-        menu.setAttribute('aria-expanded', 'false');
-        menu.setAttribute('aria-label', 'فتح القائمة');
-      }
-    });
+    nav.addEventListener('click', function(e){ if (e.target.closest('a')){ nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', 'فتح القائمة'); } });
+    document.addEventListener('click', function(e){ if (nav.classList.contains('open') && !e.target.closest('#top')){ nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', 'فتح القائمة'); } });
   }
 
   var top = document.getElementById('top');
   function onScroll(){ top.classList.toggle('solid', window.scrollY > 40); }
-  onScroll();
-  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
   var form = document.getElementById('bookForm');
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if (!form.reportValidity()) return;
     var d = new FormData(form);
-    var msg = 'مرحبًا ميمي أم روتانا\n'
-            + 'الخدمة المطلوبة: ' + d.get('service') + '\n'
-            + 'الاسم / الجهة: ' + d.get('name') + '\n'
-            + 'الهاتف: ' + d.get('phone') + '\n'
-            + (d.get('msg') ? 'التفاصيل: ' + d.get('msg') : '');
+    var msg = 'مرحبًا ميمي أم روتانا\nالخدمة المطلوبة: ' + d.get('service') + '\nالاسم / الجهة: ' + d.get('name') + '\nالهاتف: ' + d.get('phone') + (d.get('msg') ? '\nالتفاصيل: ' + d.get('msg') : '');
     window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
   });
 
-  var commentForm = document.getElementById('commentForm');
-  var commentsFeed = document.getElementById('commentsFeed');
+  var commentForm = document.getElementById('commentForm'), commentsFeed = document.getElementById('commentsFeed');
   if (commentForm && commentsFeed){
     commentForm.addEventListener('submit', function(e){
       e.preventDefault();
@@ -859,34 +707,18 @@
       var author = String(cd.get('commenterName') || '').trim();
       var text = String(cd.get('commentText') || '').trim();
       if (!author || !text) return;
-
-      var card = document.createElement('div');
-      card.className = 'comment-item';
-
-      var strong = document.createElement('strong');
-      strong.textContent = author;
-
-      var p = document.createElement('p');
-      p.textContent = text;
-
-      card.appendChild(strong);
-      card.appendChild(p);
-      commentsFeed.prepend(card);
-      commentForm.reset();
+      var card = document.createElement('div'); card.className = 'comment-item';
+      var strong = document.createElement('strong'); strong.textContent = author;
+      var p = document.createElement('p'); p.textContent = text;
+      card.appendChild(strong); card.appendChild(p); commentsFeed.prepend(card); commentForm.reset();
     });
   }
 
   var items = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion:reduce)').matches){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
-      });
-    }, {threshold:.14, rootMargin:'0px 0px -40px'});
+    var io = new IntersectionObserver(function(entries){ entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, {threshold:.14, rootMargin:'0px 0px -40px'});
     items.forEach(function(el){ io.observe(el); });
-  } else {
-    items.forEach(function(el){ el.classList.add('in'); });
-  }
+  } else { items.forEach(function(el){ el.classList.add('in'); }); }
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();

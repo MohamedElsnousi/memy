@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#142E38">
+<title>استكمال الاستقدام العائلي | ميمي أم روتانا</title>
+<meta name="description" content="استكمال الاستقدام العائلي ومتابعة الطلبات والمستندات عبر ميمي أم روتانا بوضوح واهتمام.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Almarai:wght@300;400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .sec-divider{max-width:1180px;margin:0 auto;padding:0 20px}
+  .sec-divider::before{content:"";display:block;height:1px;background:rgba(24,40,48,.14)}
+  .hero .dots{bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+  .hero-stats-float{
+    position:absolute;z-index:5;left:50%;bottom:0;transform:translateX(-50%);
+    width:min(1140px, calc(100% - 32px));background:#ffffff;color:#182830;
+    box-shadow:0 -8px 22px rgba(20, 46, 56, .12);
+    padding:14px 22px calc(14px + env(safe-area-inset-bottom,0px));
+  }
+  .hero-stats-grid{display:grid;grid-template-columns:repeat(4, minmax(120px, 1fr));gap:16px;text-align:center;align-items:center}
+  .hero-stats-grid .stat b{font-size:28px;color:#2B5B6C}
+  .hero-stats-grid .stat span{font-size:14px;color:#5B6D75}
+  section#contact.sec{padding-bottom:0}
+  .contact-single-box{
+    position:relative;z-index:3;background:#ffffff;color:#182830;border:0;border-radius:0;
+    margin-top:-18px;margin-bottom:0;box-shadow:0 -10px 28px rgba(20,46,56,.09);
+    max-width:740px;margin-inline:auto;
+  }
+  .contact-pane{padding:34px 36px 44px;background:#ffffff;display:flex;flex-direction:column}
+  .contact-pane--inquiry{--pane-accent:#2B5B6C;--pane-accent-soft:rgba(43,91,108,.12);--pane-btn-ink:#ffffff}
+  .pane-head{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+  .pane-head .p-ic{width:38px;height:38px;border-radius:10px;background:var(--pane-accent-soft);color:var(--pane-accent);display:grid;place-items:center;flex:none}
+  .pane-head h3{margin:0;font-size:21px;color:var(--pane-accent)}
+  .line-field{display:block;margin-bottom:20px}
+  .line-field input,.line-field select,.line-field textarea{
+    width:100%;padding:10px 2px;background:transparent;color:#182830;border:0;
+    border-bottom:1.5px solid rgba(24,40,48,.24);border-radius:0;font:400 16px Almarai,sans-serif;
+  }
+  .line-field textarea{min-height:84px;resize:vertical}
+  .line-field input:focus,.line-field select:focus,.line-field textarea:focus{outline:none;border-bottom-color:var(--pane-accent)}
+  .contact-pane .btn{background:transparent;color:var(--pane-accent);border:1.5px solid var(--pane-accent);border-radius:0}
+  .contact-pane .btn:hover{background:var(--pane-accent);color:var(--pane-btn-ink)}
+  .contact-pane .hint{color:#5B6D75}
+  .crisco-credit-below{
+    margin-top:8px;display:flex;align-items:center;justify-content:center;gap:7px;direction:ltr;
+    font-family:'Space Grotesk', system-ui, -apple-system, sans-serif;font-size:0.82rem;color:rgba(255,255,255,.72);
+  }
+  .crisco-credit-below .logo{
+    font-family:'Space Grotesk', system-ui, -apple-system, sans-serif;font-size:0.95rem;font-weight:700;
+    letter-spacing:0.6px;text-transform:uppercase;display:inline-block;text-decoration:none;
+  }
+  .crisco-credit-below .logo-a{color:#06B6D4}
+  .crisco-credit-below .logo-b{color:#8B5CF6;font-weight:500}
+  @media (max-width:860px){
+    .hero{min-height:760px}
+    .hero .txt{padding-bottom:175px}
+    .hero .dots{bottom:calc(154px + env(safe-area-inset-bottom,0px))}
+    .hero-stats-float{padding:12px 14px calc(12px + env(safe-area-inset-bottom,0px))}
+    .hero-stats-grid{grid-template-columns:repeat(2, 1fr);gap:10px 14px}
+    .hero-stats-grid .stat b{font-size:22px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="top-bar">
+    <div class="bar-in">
+      <div class="top-socials" aria-label="واتساب وفيسبوك">
+        <a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="واتساب" title="واتساب">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5 0a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.5a1.6 1.6 0 0 0 .3-.4.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4 5.2 5.2 0 0 0 3.2.6 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3Z"/></svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="فيسبوك" title="فيسبوك">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5Z"/></svg>
+        </a>
+      </div>
+      <div class="top-contact-info">
+        <a class="info-item" href="tel:+201000000000" dir="ltr"><span>+20 100 000 0000</span></a>
+        <a class="info-item" href="mailto:info@alofoq-recruitment.com"><span>info@alofoq-recruitment.com</span></a>
+        <span class="info-item"><span>العنوان: الرياض — حي العليا</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="in">
+    <a class="logo" href="index.html">ميمي أم روتانا</a>
+    <nav id="nav">
+      <a href="index.html">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/></svg>
+        <span>الرئيسية</span>
+      </a>
+      <div class="nav-item-dropdown is-current" id="servicesDropdown">
+        <button type="button" class="nav-dropdown-trigger" id="servicesTrigger" aria-expanded="false" aria-controls="servicesMenu">
+          <span class="trigger-left">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            <span>خدماتنا</span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="servicesMenu" role="menu">
+          <a href="accommodation.html" role="menuitem">توفير إقامات</a>
+          <a href="work-procedures.html" role="menuitem">استكمال إجراءات العمل</a>
+          <a href="index.html#visit" role="menuitem">زيارة عائلية</a>
+          <a href="family-recruitment.html" class="sub-link-indented is-current" aria-current="page" role="menuitem">استكمال الاستقدام العائلي</a>
+        </div>
+      </div>
+      <a href="index.html#visit">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="17" cy="9" r="2"/><path d="M17 14a3 3 0 0 1 3 3v3"/></svg>
+        <span>زيارة عائلية</span>
+      </a>
+      <a href="index.html#umrah">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M10 21v-5h4v5"/></svg>
+        <span>عمرة</span>
+      </a>
+      <a href="tickets.html">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5a2.1 2.1 0 0 0-3-3L13 8 4.8 6.2a.5.5 0 0 0-.5.8L8 12l-2 2-2-.5-.6.6 2.6 2.6 2.6 2.6.6-.6-.5-2 2-2 4.5 3.7a.5.5 0 0 0 .8-.5Z"/></svg>
+        <span>حجز تذاكر</span>
+      </a>
+    </nav>
+    <div class="top-actions">
+      <a class="btn top-ghost-btn" href="family-recruitment.html">اطلب استقداماً</a>
+      <a class="btn top-white-btn" href="#contact">تواصل معنا</a>
+    </div>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" aria-label="فتح القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="استكمال الاستقدام العائلي مع ميمي أم روتانا">
+  <div class="slide on" role="group" aria-label="1 من 2">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80')" role="img" aria-label="استكمال الاستقدام العائلي"></div>
+    <div class="shade"></div>
+    <div class="txt">
+      <nav class="hero-crumb" aria-label="مسار الصفحة">
+        <a href="index.html">الرئيسية</a>
+        <span aria-hidden="true">/</span>
+        <span>خدماتنا</span>
+        <span aria-hidden="true">/</span>
+        <span class="crumb-current">استكمال الاستقدام العائلي</span>
+      </nav>
+      <h1>استكمال الاستقدام العائلي بوضوح واهتمام</h1>
+      <p>نرتب ملفات الاستقدام العائلي ونتابع المستندات والخطوات حتى اكتمال الإجراءات.</p>
+      <a class="btn" href="#benefits">مزايا الخدمة</a>
+    </div>
+  </div>
+
+  <div class="slide" role="group" aria-label="2 من 2">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80')" role="img" aria-label="تنسيق سفر العائلة"></div>
+    <div class="shade"></div>
+    <div class="txt">
+      <nav class="hero-crumb" aria-label="مسار الصفحة">
+        <a href="index.html">الرئيسية</a>
+        <span aria-hidden="true">/</span>
+        <span>خدماتنا</span>
+        <span aria-hidden="true">/</span>
+        <span class="crumb-current">استكمال الاستقدام العائلي</span>
+      </nav>
+      <h2>متابعة الطلب وتنسيق الوصول</h2>
+      <p>نوافيك بتطورات الملف ونساعدك في ترتيب مواعيد وحجوزات السفر المناسبة للأسرة.</p>
+      <a class="btn" href="#contact">اطلب الاستقدام الآن</a>
+    </div>
+  </div>
+
+  <div class="dots" id="dots"></div>
+
+  <div class="hero-stats-float" aria-label="إحصائيات الاستقدام العائلي">
+    <div class="hero-stats-grid">
+      <div class="stat"><b>+3,600</b><span>ملف استقدام عائلي</span></div>
+      <div class="stat"><b>وضوح كامل</b><span>توضيح الخطوات والمستندات</span></div>
+      <div class="stat"><b>متابعة</b><span>تحديث مستمر لحالة الطلب</span></div>
+      <div class="stat"><b>24/7</b><span>دعم وتواصل مباشر</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="benefits">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">استكمال الاستقدام العائلي</span>
+      <h2>متابعة دقيقة لملفات الأسرة</h2>
+      <p>نحرص على تنظيم المستندات وتوضيح الخطوات لتجربة مريحة وموثوقة.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <h3>تدقيق المستندات المطلوبة</h3>
+        <p>مراجعة بيانات الأسرة والوثائق قبل التقديم لتجنب أي ملاحظات أو نواقص.</p>
+        <ul class="ticks">
+          <li>فحص اكتمال الأوراق</li>
+          <li>تنظيم ملفات الأفراد</li>
+          <li>إرشادات واضحة قبل البدء</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>متابعة حالة المعاملة</h3>
+        <p>تحديثك بمراحل الطلب خطوة بخطوة والرد على استفساراتك بسرعة.</p>
+        <ul class="ticks">
+          <li>متابعة منتظمة للملف</li>
+          <li>تنسيق المواعيد ذات الصلة</li>
+          <li>شفافية تامة في التفاصيل</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>تنسيق رحلة الوصول والتذاكر</h3>
+        <p>تسهيل حجز تذاكر الطيران المناسبة لمواعيد وصول العائلة.</p>
+        <ul class="ticks">
+          <li>خيارات سفر مريحة للأسرة</li>
+          <li>تأكيد إلكتروني واضح</li>
+          <li>دعم مستمر حتى الوصول</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider" aria-hidden="true"></div>
+
+<section class="sec alt" id="contact">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">تواصل معنا</span>
+      <h2>اطلب استكمال الاستقدام العائلي</h2>
+      <p>أرسل بياناتك وسيتواصل معك فريقنا لترتيب الخطوات المناسبة.</p>
+    </div>
+    <div class="contact-single-box reveal">
+      <div class="contact-pane contact-pane--inquiry">
+        <div class="pane-head">
+          <span class="p-ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+          </span>
+          <h3>طلب استكمال استقدام عائلي</h3>
+        </div>
+        <form class="service-wa-form" novalidate>
+          <label class="line-field"><input type="text" name="name" required autocomplete="name" placeholder="الاسم"></label>
+          <label class="line-field"><input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="رقم الهاتف"></label>
+          <label class="line-field">
+            <select name="service" required>
+              <option value="استكمال الاستقدام العائلي">استكمال الاستقدام العائلي</option>
+              <option value="مراجعة وتجهيز ملف استقدام عائلي">مراجعة وتجهيز ملف استقدام عائلي</option>
+              <option value="متابعة طلب استقدام عائلي">متابعة طلب استقدام عائلي</option>
+            </select>
+          </label>
+          <label class="line-field"><textarea name="msg" placeholder="تفاصيل الطلب (عدد الأفراد أو ملاحظاتك)"></textarea></label>
+          <button class="btn" type="submit">إرسال الطلب</button>
+          <p class="hint">بإرسالك الطلب تُحال بياناتك إلى محادثة واتساب مع فريقنا.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a class="logo" href="index.html">ميمي أم روتانا</a>
+        <p>خدمات متكاملة في برامج العمرة، وإجراءات الزيارة العائلية، وحجز تذاكر الطيران، وتوفير الإقامات والاستقدام — بوضوح وموثوقية ومتابعة مستمرة.</p>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="accommodation.html">توفير إقامات</a></li>
+          <li><a href="work-procedures.html">استكمال إجراءات العمل</a></li>
+          <li><a href="family-recruitment.html">استكمال الاستقدام العائلي</a></li>
+          <li><a href="tickets.html">حجز تذاكر</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل</h4>
+        <ul>
+          <li><a href="tel:+201000000000" dir="ltr">+20 100 000 0000</a></li>
+          <li><a href="https://wa.me/201000000000" target="_blank" rel="noopener">واتساب</a></li>
+          <li><a href="mailto:info@alofoq-recruitment.com">info@alofoq-recruitment.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> ميمي أم روتانا — جميع الحقوق محفوظة.</div>
+    <div class="crisco-credit-below">
+      <span>designed &amp; devolped by</span>
+      <a href="index.html" class="logo notranslate" dir="ltr" aria-label="CRISCODESIGN">
+        <span class="logo-a">CRISCO</span><span class="logo-b">DESIGN</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5 0a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.5a1.6 1.6 0 0 0 .3-.4.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4 5.2 5.2 0 0 0 3.2.6 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3Z"/></svg>
+</a>
+
+<script>
+(function(){
+  var WA = '201000000000';
+  var hero = document.getElementById('hero'), slides = [].slice.call(hero.querySelectorAll('.slide')), dots = document.getElementById('dots'), DELAY = 6000, i = 0, timer, btns = [];
+  hero.style.setProperty('--t', DELAY + 'ms');
+  slides.forEach(function(_, k){
+    var b = document.createElement('button'); b.type = 'button';
+    b.setAttribute('aria-label', 'الانتقال إلى الشريحة ' + (k + 1));
+    b.onclick = function(){ go(k); }; dots.appendChild(b); btns.push(b);
+  });
+  function go(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+    btns.forEach(function(b, k){ b.classList.remove('on'); if (k === i){ void b.offsetWidth; b.classList.add('on'); } });
+    restart();
+  }
+  function restart(){ clearTimeout(timer); if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return; timer = setTimeout(function(){ go(i + 1); }, DELAY); }
+  go(0);
+
+  var trigger = document.getElementById('servicesTrigger'), ddMenu = document.getElementById('servicesMenu');
+  if (trigger && ddMenu){
+    trigger.addEventListener('click', function(e){
+      if (window.innerWidth > 860){ e.preventDefault(); }
+      var isOpen = ddMenu.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    document.addEventListener('click', function(e){
+      if (!e.target.closest('#servicesDropdown')){ ddMenu.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+
+  var menu = document.getElementById('menu'), nav = document.getElementById('nav');
+  if (menu && nav){
+    menu.onclick = function(e){
+      e.stopPropagation();
+      var open = nav.classList.toggle('open');
+      menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    nav.addEventListener('click', function(e){ if (e.target.closest('a')){ nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); } });
+    document.addEventListener('click', function(e){ if (nav.classList.contains('open') && !e.target.closest('#top')){ nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); } });
+  }
+
+  var top = document.getElementById('top');
+  function onScroll(){ top.classList.toggle('solid', window.scrollY > 40); }
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  var form = document.querySelector('.service-wa-form');
+  if (form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      var d = new FormData(form);
+      var msg = 'مرحبًا ميمي أم روتانا\nالخدمة: ' + d.get('service') + '\nالاسم: ' + d.get('name') + '\nالهاتف: ' + d.get('phone') + (d.get('msg') ? '\nالتفاصيل: ' + d.get('msg') : '');
+      window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
+    });
+  }
+
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var io = new IntersectionObserver(function(entries){ entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, {threshold:.14, rootMargin:'0px 0px -40px'});
+    items.forEach(function(el){ io.observe(el); });
+  } else { items.forEach(function(el){ el.classList.add('in'); }); }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
