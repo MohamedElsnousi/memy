@@ -453,19 +453,52 @@ section[id]{scroll-margin-top:112px}
   color:var(--sand);font-weight:700;
 }
 
-/* بطاقات الخدمات: بدون مؤثرات افتراضية، وبوردر + شادو خفيف عند المرور */
+/* بطاقات وأزرار قسم الخدمات: تناسق بجانب بعض وأزرار شفافة */
 #services .cards{
-  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:22px;
+  align-items:stretch;
 }
 #services .card{
+  height:100%;
   transform:none;
-  box-shadow:none;
-  transition:border-color .3s ease, box-shadow .3s ease;
+  box-shadow:0 6px 18px rgba(20,46,56,.05);
+  border-color:rgba(24,40,48,.14);
+  transition:border-color .25s ease, box-shadow .25s ease;
 }
 #services .card:hover{
   transform:none;
-  border-color:rgba(43,91,108,.35);
-  box-shadow:0 8px 20px rgba(20,46,56,.08);
+  border-color:rgba(43,91,108,.45);
+  box-shadow:0 10px 24px rgba(20,46,56,.1);
+}
+#services .card .btn{
+  margin-top:auto;
+  background:transparent;
+  color:var(--sage);
+  border:1.5px solid var(--sage);
+  border-radius:10px;
+  padding:10px 20px;
+  text-align:center;
+  justify-content:center;
+  transition:background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+#services .card .btn:hover,
+#services .card .btn:focus-visible{
+  background:var(--sage);
+  color:var(--sage-ink);
+  border-color:var(--sage);
+  transform:none;
+}
+@media (max-width:980px){
+  #services .cards{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width:640px){
+  #services .cards{
+    grid-template-columns:1fr;
+  }
 }
 
 .plan{position:relative}
@@ -753,7 +786,7 @@ section[id]{scroll-margin-top:112px}
 #umrah .card.plan:hover{
   transform:none;
   border-color:rgba(43,91,108,.42);
-  box-shadow:0 12px 28px rgba(43,91,108,.16);
+  box-shadow:0 12px 28px rgba(20,46,56,.16);
 }
 #umrah .card.plan .tag{
   z-index:2;
